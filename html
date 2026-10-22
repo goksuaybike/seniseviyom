@@ -1,0 +1,1190 @@
+```html
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Seni Seviyorum 🌸</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            #fffafd 0%,
+            #fff1f6 45%,
+            #f8dce8 100%
+        );
+
+    cursor: pointer;
+}
+
+.start {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    z-index: 100;
+
+    transition:
+        opacity 1.5s ease,
+        transform 1.5s ease;
+}
+
+.start h1 {
+    color: #ae476d;
+
+    font-size: clamp(42px, 9vw, 75px);
+
+    font-weight: normal;
+
+    letter-spacing: 1px;
+
+    animation: heartbeat 2.2s infinite;
+}
+
+.start p {
+    margin-top: 28px;
+
+    color: #bd6b89;
+
+    font-size: clamp(17px, 4vw, 23px);
+
+    letter-spacing: 1px;
+
+    animation: pulse 2s infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: .5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+
+.stars {
+    position: absolute;
+    inset: 0;
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    transition: opacity 2s ease;
+
+    pointer-events: none;
+}
+
+.star {
+    position: absolute;
+
+    width: 3px;
+    height: 3px;
+
+    background: #ffffff;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 7px rgba(255,255,255,.9),
+        0 0 14px rgba(255,180,210,.5);
+
+    animation:
+        starFloat linear infinite,
+        twinkle ease-in-out infinite;
+}
+
+@keyframes starFloat {
+
+    from {
+        transform:
+            translateY(110vh)
+            translateX(0);
+    }
+
+    to {
+        transform:
+            translateY(-15vh)
+            translateX(40px);
+    }
+}
+
+@keyframes twinkle {
+
+    0%, 100% {
+        opacity: .15;
+        transform: scale(.7);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.4);
+    }
+}
+
+.bouquet {
+    position: absolute;
+    inset: 0;
+
+    display: none;
+
+    justify-content: center;
+    align-items: flex-end;
+
+    background:
+        radial-gradient(
+            circle at 50% 48%,
+            rgba(255,255,255,.35),
+            transparent 50%
+        );
+}
+
+.final-message {
+    position: absolute;
+
+    top: 6vh;
+    left: 50%;
+
+    transform:
+        translateX(-50%)
+        translateY(-15px);
+
+    width: 90%;
+
+    text-align: center;
+
+    color: #a94568;
+
+    font-size: clamp(26px, 5vw, 43px);
+
+    opacity: 0;
+
+    z-index: 60;
+
+    animation:
+        messageAppear 2s ease forwards;
+
+    animation-delay: 5.3s;
+}
+
+@keyframes messageAppear {
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateX(-50%)
+            translateY(0);
+    }
+}
+
+.bouquet-body {
+    position: absolute;
+
+    left: 50%;
+    bottom: 5vh;
+
+    width: 470px;
+    height: 560px;
+
+    transform: translateX(-50%);
+}
+
+.stem {
+    position: absolute;
+
+    left: 50%;
+    bottom: 90px;
+
+    width: 7px;
+    height: 390px;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #385a36,
+            #77986d,
+            #405f3b
+        );
+
+    transform-origin: bottom;
+
+    opacity: 0;
+
+    animation:
+        stemGrow 2.4s ease forwards;
+}
+
+.stem:nth-child(1) {
+    transform: rotate(-32deg);
+    animation-delay: .1s;
+}
+
+.stem:nth-child(2) {
+    transform: rotate(-25deg);
+    animation-delay: .2s;
+}
+
+.stem:nth-child(3) {
+    transform: rotate(-18deg);
+    animation-delay: .3s;
+}
+
+.stem:nth-child(4) {
+    transform: rotate(-10deg);
+    animation-delay: .4s;
+}
+
+.stem:nth-child(5) {
+    transform: rotate(-3deg);
+    animation-delay: .5s;
+}
+
+.stem:nth-child(6) {
+    transform: rotate(5deg);
+    animation-delay: .6s;
+}
+
+.stem:nth-child(7) {
+    transform: rotate(12deg);
+    animation-delay: .7s;
+}
+
+.stem:nth-child(8) {
+    transform: rotate(20deg);
+    animation-delay: .8s;
+}
+
+.stem:nth-child(9) {
+    transform: rotate(27deg);
+    animation-delay: .9s;
+}
+
+.stem:nth-child(10) {
+    transform: rotate(34deg);
+    animation-delay: 1s;
+}
+
+@keyframes stemGrow {
+
+    from {
+        height: 0;
+        opacity: 0;
+    }
+
+    to {
+        height: 390px;
+        opacity: 1;
+    }
+}
+
+.leaf {
+    position: absolute;
+
+    width: 105px;
+    height: 45px;
+
+    border-radius:
+        100% 0 100% 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            #789b70,
+            #456940
+        );
+
+    opacity: 0;
+
+    animation:
+        leafAppear 1.5s ease forwards;
+}
+
+.l1 {
+    left: 35px;
+    bottom: 170px;
+    transform: rotate(-35deg);
+    animation-delay: 2s;
+}
+
+.l2 {
+    left: 5px;
+    bottom: 250px;
+    transform: rotate(-55deg);
+    animation-delay: 2.15s;
+}
+
+.l3 {
+    left: 95px;
+    bottom: 315px;
+    transform: rotate(-25deg);
+    animation-delay: 2.3s;
+}
+
+.r1 {
+    right: 35px;
+    bottom: 175px;
+    transform: rotate(35deg) scaleX(-1);
+    animation-delay: 2.1s;
+}
+
+.r2 {
+    right: 5px;
+    bottom: 255px;
+    transform: rotate(55deg) scaleX(-1);
+    animation-delay: 2.25s;
+}
+
+.r3 {
+    right: 90px;
+    bottom: 320px;
+    transform: rotate(25deg) scaleX(-1);
+    animation-delay: 2.4s;
+}
+
+@keyframes leafAppear {
+
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.magnolia {
+    position: absolute;
+
+    width: 135px;
+    height: 135px;
+
+    opacity: 0;
+
+    animation:
+        flowerOpen
+        2.5s
+        cubic-bezier(.15,.7,.25,1.25)
+        forwards,
+        flowerSway 5s ease-in-out infinite;
+
+    animation-fill-mode: forwards, none;
+}
+
+
+/* Konumlar */
+
+.m1 {
+    left: 5px;
+    top: 55px;
+    animation-delay: 1.15s, 4.5s;
+}
+
+.m2 {
+    left: 65px;
+    top: 5px;
+    animation-delay: 1.4s, 4.8s;
+}
+
+.m3 {
+    left: 135px;
+    top: 45px;
+    animation-delay: 1.65s, 5.1s;
+}
+
+.m4 {
+    left: 205px;
+    top: 0;
+    animation-delay: 1.9s, 5.4s;
+}
+
+.m5 {
+    left: 270px;
+    top: 60px;
+    animation-delay: 2.15s, 5.7s;
+}
+
+.m6 {
+    left: 45px;
+    top: 140px;
+    animation-delay: 2.4s, 6s;
+}
+
+.m7 {
+    left: 120px;
+    top: 150px;
+    animation-delay: 2.65s, 6.3s;
+}
+
+.m8 {
+    left: 200px;
+    top: 140px;
+    animation-delay: 2.9s, 6.6s;
+}
+
+.m9 {
+    left: 285px;
+    top: 155px;
+    animation-delay: 3.15s, 6.9s;
+}
+
+.petal {
+    position: absolute;
+
+    left: 34px;
+    top: 20px;
+
+    width: 67px;
+    height: 90px;
+
+    border-radius:
+        65% 65% 52% 52%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fffefe 5%,
+            #fff0f5 30%,
+            #f8bfd1 65%,
+            #e98eae 100%
+        );
+
+    transform-origin:
+        50% 90%;
+
+    box-shadow:
+        inset -6px -8px 13px
+        rgba(176,66,104,.12);
+}
+
+
+/* İnce pembe damar */
+
+.petal::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: 17px;
+
+    width: 2px;
+    height: 63px;
+
+    background:
+        linear-gradient(
+            transparent,
+            rgba(181,74,110,.25),
+            transparent
+        );
+}
+
+
+/* 5 ana taç yaprağı */
+
+.petal:nth-child(1) {
+    transform:
+        rotate(0deg)
+        translateY(-19px);
+}
+
+.petal:nth-child(2) {
+    transform:
+        rotate(72deg)
+        translateY(-19px);
+}
+
+.petal:nth-child(3) {
+    transform:
+        rotate(144deg)
+        translateY(-19px);
+}
+
+.petal:nth-child(4) {
+    transform:
+        rotate(216deg)
+        translateY(-19px);
+}
+
+.petal:nth-child(5) {
+    transform:
+        rotate(288deg)
+        translateY(-19px);
+}
+
+
+/* İç küçük taç yaprakları */
+
+.inner-petal {
+    position: absolute;
+
+    width: 42px;
+    height: 60px;
+
+    left: 47px;
+    top: 37px;
+
+    border-radius: 60%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fffafd,
+            #f5b4c9
+        );
+
+    transform-origin:
+        50% 90%;
+}
+
+.inner-petal:nth-child(1) {
+    transform: rotate(30deg) translateY(-10px);
+}
+
+.inner-petal:nth-child(2) {
+    transform: rotate(150deg) translateY(-10px);
+}
+
+.inner-petal:nth-child(3) {
+    transform: rotate(270deg) translateY(-10px);
+}
+.flower-center {
+    position: absolute;
+
+    left: 50px;
+    top: 50px;
+
+    width: 36px;
+    height: 36px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            #ffe8a5 0%,
+            #e8bd62 55%,
+            #bd8737 100%
+        );
+
+    z-index: 20;
+
+    box-shadow:
+        0 0 12px
+        rgba(215,169,72,.4);
+}
+
+
+/* Polenler */
+
+.flower-center::before {
+    content: "• • •";
+
+    position: absolute;
+
+    top: 8px;
+    left: -1px;
+
+    color: #a9722b;
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+}
+
+@keyframes flowerOpen {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            scale(.03)
+            rotate(-25deg);
+    }
+
+    55% {
+        opacity: 1;
+
+        transform:
+            scale(1.12)
+            rotate(6deg);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            scale(1)
+            rotate(0);
+    }
+}
+
+@keyframes flowerSway {
+
+    0%, 100% {
+        margin-left: 0;
+    }
+
+    50% {
+        margin-left: 4px;
+    }
+}
+
+.wrapper {
+    position: absolute;
+
+    left: 50%;
+    bottom: 2vh;
+
+    width: 300px;
+    height: 185px;
+
+    transform:
+        translateX(-50%)
+        rotate(2deg);
+
+    z-index: 30;
+
+    opacity: 0;
+
+    animation:
+        wrapperAppear 1.7s ease forwards;
+
+    animation-delay: 3.5s;
+}
+
+
+.paper {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            145deg,
+            #d9ad7b,
+            #f0c89c 40%,
+            #c89565
+        );
+
+    clip-path:
+        polygon(
+            5% 20%,
+            95% 0,
+            84% 100%,
+            0 78%
+        );
+
+    box-shadow:
+        0 10px 20px
+        rgba(100,60,40,.18);
+}
+
+.paper::after {
+    content: "";
+
+    position: absolute;
+
+    width: 230px;
+    height: 90px;
+
+    left: 35px;
+    top: 35px;
+
+    background:
+        rgba(255,235,210,.25);
+
+    transform: rotate(-5deg);
+
+    border-radius: 50%;
+}
+
+.ribbon {
+    position: absolute;
+
+    left: 50%;
+    bottom: 65px;
+
+    width: 125px;
+    height: 65px;
+
+    transform:
+        translateX(-50%)
+        scale(.4);
+
+    background:
+        linear-gradient(
+            90deg,
+            #c95e82,
+            #efa5bb,
+            #c95e82
+        );
+
+    border-radius: 12px;
+
+    z-index: 50;
+
+    opacity: 0;
+
+    animation:
+        ribbonAppear 1.5s ease forwards;
+
+    animation-delay: 4s;
+}
+
+
+/* Fiyonk */
+
+.ribbon::before,
+.ribbon::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 3px;
+
+    width: 95px;
+    height: 75px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #dc7899,
+            #f2aec1
+        );
+
+    z-index: -1;
+}
+
+.ribbon::before {
+
+    left: -68px;
+
+    transform: rotate(32deg);
+
+    clip-path:
+        polygon(
+            0 0,
+            100% 28%,
+            70% 100%,
+            35% 70%
+        );
+}
+
+.ribbon::after {
+
+    right: -68px;
+
+    transform: rotate(-32deg);
+
+    clip-path:
+        polygon(
+            0 28%,
+            100% 0,
+            65% 70%,
+            30% 100%
+        );
+}
+
+@keyframes ribbonAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateX(-50%)
+            scale(.4);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateX(-50%)
+            scale(1);
+    }
+}
+
+@media (max-width: 600px) {
+
+    .bouquet-body {
+
+        transform:
+            translateX(-50%)
+            scale(.68);
+
+        transform-origin:
+            bottom center;
+    }
+
+    .final-message {
+        top: 5vh;
+
+        font-size: 28px;
+    }
+
+    .wrapper {
+        transform:
+            translateX(-50%)
+            scale(.8)
+            rotate(2deg);
+    }
+}
+
+</style>
+</head>
+
+
+<body onclick="openGift()">
+
+<div class="stars" id="stars"></div>
+
+<div class="start" id="start">
+
+    <h1>Seni seviyorum ❤️</h1>
+
+    <p>Hediyen için tıkla 🌸</p>
+
+</div>
+
+<div class="bouquet" id="bouquet">
+
+    <div class="final-message">
+        Senin için... 🌸
+    </div>
+
+
+    <div class="bouquet-body">
+
+
+        
+
+        <div class="stem"></div>
+        <div class="stem"></div>
+        <div class="stem"></div>
+        <div class="stem"></div>
+        <div class="stem"></div>
+        <div class="stem"></div>
+        <div class="stem"></div>
+        <div class="stem"></div>
+        <div class="stem"></div>
+        <div class="stem"></div>
+
+
+        <!-- YAPRAKLAR -->
+
+        <div class="leaf l1"></div>
+        <div class="leaf l2"></div>
+        <div class="leaf l3"></div>
+
+        <div class="leaf r1"></div>
+        <div class="leaf r2"></div>
+        <div class="leaf r3"></div>
+
+
+        <!-- =================================================
+             MANOLYALAR
+        ================================================= -->
+
+
+        <div class="magnolia m1">
+
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+
+            <div class="inner-petal"></div>
+            <div class="inner-petal"></div>
+            <div class="inner-petal"></div>
+
+            <div class="flower-center"></div>
+
+        </div>
+
+
+        <div class="magnolia m2">
+
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+
+            <div class="inner-petal"></div>
+            <div class="inner-petal"></div>
+            <div class="inner-petal"></div>
+
+            <div class="flower-center"></div>
+
+        </div>
+
+
+        <div class="magnolia m3">
+
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+
+            <div class="inner-petal"></div>
+            <div class="inner-petal"></div>
+            <div class="inner-petal"></div>
+
+            <div class="flower-center"></div>
+
+        </div>
+
+
+        <div class="magnolia m4">
+
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+
+            <div class="inner-petal"></div>
+            <div class="inner-petal"></div>
+            <div class="inner-petal"></div>
+
+            <div class="flower-center"></div>
+
+        </div>
+
+
+        <div class="magnolia m5">
+
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+
+            <div class="inner-petal"></div>
+            <div class="inner-petal"></div>
+            <div class="inner-petal"></div>
+
+            <div class="flower-center"></div>
+
+        </div>
+
+
+        <div class="magnolia m6">
+
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+
+            <div class="inner-petal"></div>
+            <div class="inner-petal"></div>
+            <div class="inner-petal"></div>
+
+            <div class="flower-center"></div>
+
+        </div>
+
+
+        <div class="magnolia m7">
+
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+
+            <div class="inner-petal"></div>
+            <div class="inner-petal"></div>
+            <div class="inner-petal"></div>
+
+            <div class="flower-center"></div>
+
+        </div>
+
+
+        <div class="magnolia m8">
+
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+
+            <div class="inner-petal"></div>
+            <div class="inner-petal"></div>
+            <div class="inner-petal"></div>
+
+            <div class="flower-center"></div>
+
+        </div>
+
+
+        <div class="magnolia m9">
+
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+
+            <div class="inner-petal"></div>
+            <div class="inner-petal"></div>
+            <div class="inner-petal"></div>
+
+            <div class="flower-center"></div>
+
+        </div>
+
+
+        <!-- =================================================
+             KRAFT KÂĞIT
+        ================================================= -->
+
+        <div class="wrapper">
+
+            <div class="paper"></div>
+
+        </div>
+
+
+        <!-- KURDELE -->
+
+        <div class="ribbon"></div>
+
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   YILDIZLARI OLUŞTUR
+===================================================== */
+
+const stars =
+    document.getElementById("stars");
+
+for (let i = 0; i < 75; i++) {
+
+    const star =
+        document.createElement("div");
+
+    star.className = "star";
+
+    star.style.left =
+        Math.random() * 100 + "%";
+
+    star.style.width =
+        (Math.random() * 3 + 1) + "px";
+
+    star.style.height =
+        star.style.width;
+
+    star.style.animationDuration =
+        (8 + Math.random() * 12) + "s, " +
+        (2 + Math.random() * 4) + "s";
+
+    star.style.animationDelay =
+        (-Math.random() * 15) + "s, " +
+        (-Math.random() * 5) + "s";
+
+    stars.appendChild(star);
+}
+
+
+/* =====================================================
+   HEDİYEYİ AÇ
+===================================================== */
+
+let opened = false;
+
+function openGift() {
+
+    if (opened) return;
+
+    opened = true;
+
+    const start =
+        document.getElementById("start");
+
+    const bouquet =
+        document.getElementById("bouquet");
+
+    const stars =
+        document.getElementById("stars");
+
+
+    /* Başlangıç ekranı */
+
+    start.style.opacity = "0";
+
+    start.style.transform =
+        "scale(.85)";
+
+
+    /* Yıldızlar yavaşça ortaya çıkar */
+
+    stars.style.opacity = "1";
+
+
+    /* Yazı kaybolduktan sonra buket */
+
+    setTimeout(() => {
+
+        start.style.display = "none";
+
+        bouquet.style.display = "flex";
+
+    }, 1500);
+
+}
+
+</script>
+
+</body>
+</html>
+```
